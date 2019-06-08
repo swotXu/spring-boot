@@ -1,0 +1,12 @@
+spring:
+  #表示所用配置文件为application-dev.yml
+  profiles:
+    active: dev
+  #视图层控制 用mvc方式访问
+  mvc:
+      view:
+        prefix: classpath:/WEB-INF/jsp/
+        suffix: .jsp
+
+logging:
+  file: logs/meituan.log

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="meituan" />
+        <module name="meituan (1)" />
+        <module name="ticket12306" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="meituan" target="1.8" />
+      <module name="meituan (1)" target="1.8" />
+      <module name="ticket12306" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
