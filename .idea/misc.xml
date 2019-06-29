@@ -5,8 +5,18 @@
       <list>
         <option value="$PROJECT_DIR$/ticket12306/pom.xml" />
         <option value="$PROJECT_DIR$/meituan/pom.xml" />
+        <option value="$PROJECT_DIR$/demowork/pom.xml" />
+        <option value="$PROJECT_DIR$/itarstringbootstarter/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/bbt/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/itar/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="WebServicesPlugin" addRequiredLibraries="true" />
 </project>

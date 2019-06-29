@@ -6,7 +6,10 @@ import com.xuh.ticket12306.mqtools.TicketSender;
 import com.xuh.ticket12306.ticket.pojo.TicketEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.TransactionCallback;
+import org.springframework.transaction.support.TransactionTemplate;
 
 import java.util.List;
 import java.util.Random;
@@ -20,6 +23,8 @@ public class GrapTicket {
     TicketService ticketService;
     @Autowired
     TicketSender ticketSender;
+    @Autowired
+    TransactionTemplate transactionTemplate;
 
     /**
      * 抢票方法
@@ -27,6 +32,12 @@ public class GrapTicket {
      */
     @Transactional
     public String grapTicket(){
+        transactionTemplate.execute(new TransactionCallback<Object>() {
+            @Override
+            public Object doInTransaction(TransactionStatus transactionStatus) {
+                return null;
+            }
+        });
         // 检查余票
         List<TicketEntity> list = ticketService.queryAllTicket();
         JSONObject retObj = new JSONObject();

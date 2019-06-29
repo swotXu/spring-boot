@@ -6,12 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="bbt" />
+        <module name="demowork" />
+        <module name="itarstringbootstarter" />
+        <module name="itgirl" />
         <module name="meituan" />
         <module name="meituan (1)" />
-        <module name="ticket12306" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="bbt" target="1.5" />
+      <module name="demowork" target="1.8" />
+      <module name="itar" target="1.8" />
+      <module name="itarspringbootstarter" target="1.5" />
+      <module name="itarstringbootstarter" target="1.5" />
+      <module name="itgirl" target="1.5" />
       <module name="meituan" target="1.8" />
       <module name="meituan (1)" target="1.8" />
       <module name="ticket12306" target="1.8" />
