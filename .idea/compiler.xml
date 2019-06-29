@@ -12,6 +12,7 @@
         <module name="itgirl" />
         <module name="meituan" />
         <module name="meituan (1)" />
+        <module name="ticket12306" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
