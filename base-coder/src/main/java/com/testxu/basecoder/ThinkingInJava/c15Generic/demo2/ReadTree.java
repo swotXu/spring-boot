@@ -3,7 +3,6 @@ package com.testxu.basecoder.ThinkingInJava.c15Generic.demo2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Timer;
 
 /**
  * @Classname: spring-boot
@@ -58,18 +57,24 @@ public class ReadTree {
 
         // 创建三级节点
         TreeNode<String> middle2_Node1 = new TreeNode<>("e_node");
-        TreeNode<String> middle2_Node2 = new TreeNode<>("f_node");
+        TreeNodeGroup<String> middle2_Node2 = new TreeNodeGroup<>("f_node");
         middle1_Node1.addNode(middle2_Node1, middle2_Node2);
 
         TreeNode<String> middle2_Node3 = new TreeNode<>("g_node");
         TreeNode<String> middle2_Node4 = new TreeNode<>("h_node");
         middle1_Node3.addNode(middle2_Node3, middle2_Node4);
 
+        // 创建四级节点
+        TreeNode<String> middle3_Node1 = new TreeNode<>("i_node");
+        TreeNode<String> middle3_Node2 = new TreeNode<>("j_node");
+        middle2_Node2.addNode(middle3_Node1, middle3_Node2);
+
         return root;
     }
 
     /**
      * 深度优先 - 迭代获取节点
+     * 使用栈存储实现
      * @param root
      */
     static void depthFirst(TreeNode<String> root){
@@ -90,6 +95,7 @@ public class ReadTree {
 
     /**
      * 广度优先 - 迭代获取节点
+     * 采用队列方式实现
      * @param root
      */
     static void beradthFirst(TreeNode<String> root){
@@ -106,36 +112,44 @@ public class ReadTree {
             }
         }
     }
+
+    /**
+     * 广度优先 - 迭代获取节点，并展示树形结构
+     * 采用队列方式实现
+     * @param root
+     */
     static void beradthFirstTree(TreeNode<String> root){
         LinkedQueue<TreeNode<String>> nodeQueue = new LinkedQueue<>();
         TreeNode<String> node = root;
         nodeQueue.enQueue(node);
 
-        LinkedQueue<Integer> stepQueue = new LinkedQueue<>();
-        int step = -1;
+        int step = 0; // 记录当前层节点数
+        int nextStep = 0; // 记录下一层节点数
         while (!nodeQueue.isEmpty()){
             node = nodeQueue.deQueue();
             System.out.print(node.item);
 
-            if(stepQueue.isEmpty()){
-                System.out.println();
-            }else if(step == -1) {
-                step = stepQueue.deQueue();
-                System.out.print(" ");
-            }else if(step == 1){
-                System.out.println();
-            }else{
-                step--;
-                System.out.print(" ");
-            }
-
+            int nextLen = 0;
             if(node instanceof TreeNodeGroup){
-                stepQueue.enQueue(((TreeNodeGroup) node).getNodeSize());
+                nextLen = ((TreeNodeGroup) node).getNodeSize();
+                System.out.print("("+nextLen+")");
                 for (int i = 0, len = ((TreeNodeGroup) node).getNodeSize(); i < len; i++) {
                     nodeQueue.enQueue(((TreeNodeGroup) node).getNodeAtIndex(i));
                 }
+            }
+            // 若当前节点数量 step!=0 说明此层未结束，则继续叠加下层节点数量,并-1
+            if(step > 0){
+                nextStep += nextLen;
+                step--;
+            }
+            // 若当前节点数量 step=0 ,打印换行，同时更新下一层节点数，否则打印空格
+            if(step == 0){
+                System.out.println();
+                // 如果下层节点 nextStep=0，说明此层可能为根节点（初次进入）或为最后叶子节点，直接赋值临时下层节点即可。
+                // 否者，当前为中间层。
+                step = nextStep == 0? nextLen : nextStep;
             }else{
-                stepQueue.enQueue(0);
+                System.out.print(" ");
             }
         }
     }
