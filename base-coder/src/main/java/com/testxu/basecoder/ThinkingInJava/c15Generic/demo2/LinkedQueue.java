@@ -7,9 +7,9 @@ package com.testxu.basecoder.ThinkingInJava.c15Generic.demo2;
  * @Description: 链表队列
  */
 public class LinkedQueue<T> {
-    static class Note<T>{
+    class Note{
         private T item;
-        private Note<T> next;
+        private Note next;
 
         Note(){
             this.item = null;
@@ -19,13 +19,13 @@ public class LinkedQueue<T> {
         }
     }
 
-    private Note<T> topNode;
-    private Note<T> bottonNode;
+    private Note topNode;
+    private Note bottonNode;
     private int size;
 
     public LinkedQueue(){
         this.size = 0;
-        this.topNode = new Note<T>(null);
+        this.topNode = new Note(null);
         this.bottonNode = this.topNode;
     }
 
@@ -35,7 +35,7 @@ public class LinkedQueue<T> {
      * @return
      */
     public LinkedQueue<T> enQueue(T item){
-        Note<T> newNote = new Note<>(item);
+        Note newNote = new Note(item);
         this.bottonNode.next = newNote;
         this.bottonNode = newNote;
         size++;
@@ -56,7 +56,7 @@ public class LinkedQueue<T> {
             this.size--;
             return item;
         }
-        Note<T> next = this.topNode.next;
+        Note next = this.topNode.next;
         this.topNode.next = next.next;
         this.size--;
         return next.item;

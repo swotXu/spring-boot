@@ -7,14 +7,14 @@ package com.testxu.basecoder.ThinkingInJava.c15Generic.demo2;
  * @Description: 链表栈
  */
 public class LinkedStack<T> {
-    private static class Note<T>{
+    private class Note{
         private T item;
-        private Note<T> next;
+        private Note next;
         private Note(){
             this.item = null;
             this.next = null;
         }
-        private Note(T item, Note<T> next){
+        private Note(T item, Note next){
             this.item = item;
             this.next = next;
         }
@@ -23,11 +23,11 @@ public class LinkedStack<T> {
         }
     }
 
-    private Note<T> top;
+    private Note top;
     private int size;
 
     public LinkedStack(){
-        this.top = new Note<>();
+        this.top = new Note();
         this.size = 0;
     }
 
@@ -36,7 +36,7 @@ public class LinkedStack<T> {
      * @param item
      */
     public void push(T item){
-        this.top = new Note<>(item, this.top);
+        this.top = new Note(item, this.top);
         size++;
     }
 
@@ -60,7 +60,7 @@ public class LinkedStack<T> {
         return this.size == 0;
     }
     public LinkedStack<T> clear(){
-        this.top = new Note<>();
+        this.top = new Note();
         this.size = 0;
         return this;
     }
