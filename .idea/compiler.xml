@@ -6,7 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="base-coder" />
         <module name="bbt" />
+        <module name="demo" />
         <module name="demowork" />
         <module name="itarstringbootstarter" />
         <module name="itgirl" />
@@ -16,7 +18,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="base-coder" target="1.8" />
       <module name="bbt" target="1.5" />
+      <module name="demo" target="1.8" />
       <module name="demowork" target="1.8" />
       <module name="itar" target="1.8" />
       <module name="itarspringbootstarter" target="1.5" />

@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/base-coder/base-coder.iml" filepath="$PROJECT_DIR$/base-coder/base-coder.iml" />
       <module fileurl="file://$PROJECT_DIR$/bbt/bbt.iml" filepath="$PROJECT_DIR$/bbt/bbt.iml" />
-      <module fileurl="file://$PROJECT_DIR$/demowork/demowork.iml" filepath="$PROJECT_DIR$/demowork/demowork.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demowork/demo.iml" filepath="$PROJECT_DIR$/demowork/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/itarstringbootstarter/itarstringbootstarter.iml" filepath="$PROJECT_DIR$/itarstringbootstarter/itarstringbootstarter.iml" />
-      <module fileurl="file://$PROJECT_DIR$//itgirl.iml" filepath="$PROJECT_DIR$//itgirl.iml" />
       <module fileurl="file://$PROJECT_DIR$/meituan/meituan.iml" filepath="$PROJECT_DIR$/meituan/meituan.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/spring-boot.iml" filepath="$PROJECT_DIR$/.idea/spring-boot.iml" />
       <module fileurl="file://$PROJECT_DIR$/ticket12306/ticket12306.iml" filepath="$PROJECT_DIR$/ticket12306/ticket12306.iml" />

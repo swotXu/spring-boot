@@ -23,14 +23,58 @@ public class SortDemo {
 
 
     public static void main(String[] args) {
-        int[] arr = getArr(2000);
+        int[] arr = getArr(500);
         toStr(arr);
 
-        sort1(arr);
+        // 冒泡
+//        sort1(arr, true);
+//        sort1(arr, false);
+        // 选择
+//        sort2(arr, true);
+//        sort2(arr, false);
+
+
+        toStr(arr);
 
     }
 
-    public static void sort1(int[] arr){
+    /**
+     * 冒泡排序  O(n^2)
+     * @param arr
+     * @param escOrDesc true-正序 false-倒序
+     */
+    public static void sort1(int[] arr, boolean escOrDesc){
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i+1; j < arr.length; j++) {
+                boolean flag = (escOrDesc && arr[i] > arr[j]) || (!escOrDesc && arr[i] < arr[j]);
+                if(flag){
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+    }
 
+    /**
+     * 选择排序 O(n^2)
+     * @param arr
+     * @param escOrDesc true-正序 false-倒序
+     */
+    public static void sort2(int[] arr, boolean escOrDesc){
+        for (int i = 0; i < arr.length; i++) {
+            int index = i;
+            for (int j = i+1; j < arr.length; j++) {
+                boolean flag = (escOrDesc && arr[index] > arr[j]) || (!escOrDesc && arr[index] < arr[j]);
+                if(flag){
+                    index = j;
+                }
+            }
+            if(index != i){
+                int temp = arr[i];
+                arr[i] = arr[index];
+                arr[index] = temp;
+            }
+        }
     }
 }

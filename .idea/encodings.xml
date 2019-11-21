@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/base-coder" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demowork" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/itar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/itarstringbootstarter" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/meituan" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ticket12306" charset="UTF-8" />
