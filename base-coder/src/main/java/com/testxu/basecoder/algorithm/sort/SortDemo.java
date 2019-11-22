@@ -23,11 +23,11 @@ public class SortDemo {
 
 
     public static void main(String[] args) {
-        int[] arr = getArr(500);
+        int[] arr = getArr(10000);
         toStr(arr);
 
         // 冒泡
-//        sort1(arr, true);
+        sort1(arr, true);
 //        sort1(arr, false);
         // 选择
 //        sort2(arr, true);
@@ -44,6 +44,7 @@ public class SortDemo {
      * @param escOrDesc true-正序 false-倒序
      */
     public static void sort1(int[] arr, boolean escOrDesc){
+        long start = System.currentTimeMillis();
         for (int i = 0; i < arr.length; i++) {
             for (int j = i+1; j < arr.length; j++) {
                 boolean flag = (escOrDesc && arr[i] > arr[j]) || (!escOrDesc && arr[i] < arr[j]);
@@ -54,6 +55,8 @@ public class SortDemo {
                 }
             }
         }
+        long end = System.currentTimeMillis();
+        System.out.println("冒泡排序  O(n^2) : " + (end - start));
     }
 
     /**
@@ -62,6 +65,7 @@ public class SortDemo {
      * @param escOrDesc true-正序 false-倒序
      */
     public static void sort2(int[] arr, boolean escOrDesc){
+        long start = System.currentTimeMillis();
         for (int i = 0; i < arr.length; i++) {
             int index = i;
             for (int j = i+1; j < arr.length; j++) {
@@ -76,5 +80,17 @@ public class SortDemo {
                 arr[index] = temp;
             }
         }
+        long end = System.currentTimeMillis();
+        System.out.println("选择排序  O(n^2) : " + (end - start));
     }
+
+    /**
+     * 基数排序 O(n)
+     * @param arr
+     * @param escOrDesc
+     */
+    public static void sort3(int[] arr, boolean escOrDesc){
+
+    }
+
 }
